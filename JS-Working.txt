@@ -1,0 +1,34 @@
+How JS works?
+Is JS synchronous or Asynchronous?
+Single threaded or multi-threaded?
+
+Everything in JS happens inside an "Execution Context".
+JS is synchronous single-threaded language.
+JS can execute one command at time in a particular order. Goes to next line of execution when current line of code is executed.
+
+What happens when you run JS code?
+
+When we run a JS code - A Global Execution Contextis created.
+Execution context is created in two phase:-
+1.Memory creation phase
+2.Code Execution phase
+
+When a function is invoked inside the global execution context - A whole new execution context is created inside global execution context.
+
+Call Stack - It maintains the order of execution of execution contexts (Manages the execution context).
+Other names for Call Stack:
+1.Execution Context Stack
+2.Program Stack
+3.Control Stack
+4.Runtime Stack
+5.Machine Stack
+
+JS is loosely typed language or weakly typed language.
+It does not attaches its variable to any specific data type.
+Means we put can string in a variable a or array in it.
+
+Scope in JS:- A code space where you can access a specific variable or a function.
+
+Lexical Environment:- It is the local memory along with the lexical environment of its parent.
+Lexical means in-hierarchy or sequence.
+Scope chain - Way of finding the value in the hierarchy lexical environment.
