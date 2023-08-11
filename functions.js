@@ -20,11 +20,17 @@
 // }
 
 //Closure Demo with Callback Function:-
-function attachEventListeners() {
-  let count = 0;
-  document.getElementById("clickMe").addEventListener("click", () => {
-    console.log("Button Clicked", ++count);
-  });
-}
+// function attachEventListeners() {
+//   let count = 0;
+//   document.getElementById("clickMe").addEventListener("click", () => {
+//     console.log("Button Clicked", ++count);
+//   });
+// }
 
-attachEventListeners();
+// attachEventListeners();
+
+function a(){
+  console.log("a");
+}
+a();
+console.log("End");

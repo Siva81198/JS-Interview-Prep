@@ -200,4 +200,19 @@ A function passed to other function as a parameter.
 
 Use Async for operations which take more time, So that it won't block the main thread/Call Stack.
 
-Event Loop:-
+Web API's:-
+setTimeout();
+DOM API's[document.get...]
+fetch()
+local Storage
+location
+console
+
+Global object is (window).
+
+Event Loop:- Continously monitor call stack and callback queue and Microtask queue, whenever call stack is empty it would send the operation present in the callback queue.
+
+Callback Queue/Task Queue:-[callback fn. of setTimeout , EventListener sent to callback queue.]
+Starvation of task inside callback queue.
+
+Microtask Queue:-High priority than callback queue. Microtask queue executes first then callback queue executes.[callback fn. sent to microtask queue - In case of promise/network call, mutation obserever]
