@@ -5,10 +5,23 @@
 //Not defined in console - Memory not alloted [Error]
 
 
+// function x() {
+//     let a = 8;
+//     function y() {
+//         console.log(a);
+//     }
+//     a = 100;
+//     return y;
+// }
+// let z = x();
+// z();
+// console.log(z);
 
-function b(){
-    a = 90;
-    console.log(a);
+for (var i = 1; i <= 5; i++) {
+    function disp(i) {
+        setTimeout(() => {
+            console.log(i);
+        }, i * 1000);
+    }
+    disp(i);
 }
-let a = 10;
-b();

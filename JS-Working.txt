@@ -29,6 +29,121 @@ Means we put can string in a variable a or array in it.
 
 Scope in JS:- A code space where you can access a specific variable or a function.
 
-Lexical Environment:- It is the local memory along with the lexical environment of its parent.
-Lexical means in-hierarchy or sequence.
-Scope chain - Way of finding the value in the hierarchy lexical environment.
+The scope is where a variable is available in the code. Each block of code creates scope and a lexical environment.
+
+Scope chain - 
+1.Way of finding the value in the hierarchy lexical environment.
+2.Chain of lexical environment is known as scope chain. And it defines whether a variable or function present inside the scope or not.
+
+Lexical environment:-
+1.Lexical environment is created whenever a execution context is created.
+2.Lexical Environment:- It is the local memory along with the lexical environment of its parent.
+3.[Definition of Lexical Environment:- Every execution context has a reference to its outer environment, and that outer environment is called Lexical Environment.]
+4.Lexical means in-hierarchy or sequence.
+
+var is a functioned scope.
+
+Let & Const:-
+1.let & const declarations are hoisted but different than var keyword.
+2.Temporal Dead zone is the time since when this let variable is hoisted and till the let variable is initialized with a value.
+Time between both instances is known as temporal dead zone.
+3.To avoid Temporal Dead zone:- Push all variable declarations and intialization to the top of the code.
+4.let and const are block scoped.
+
+Example:-
+let a = 10;// We cannot access a by window.a because it is present in a different scope.
+var b = 100;//// We can access b by window.b because it is present in window/Global scope/object.
+
+let is more stict than var.
+let cannot be re-declared like var keyword.
+const need to be initialized while declaring.
+
+Errors in JS:-
+1.Whenever we try to access a variable in temporal dead zone, we get "Reference Error".
+2.When any variable is not defined in the code and we try to access it, we get "Reference Error".
+3.In case of "Syntax Error" - the code does not even run, it directly throws error.
+4."TypeError":- Re-Assigning a value to a const variable. 
+
+Block Scope in JS:- 
+Block scope is also lexical scope.
+Block => 
+{
+    //compound statement
+    //We group multiple statements in a block if we have more line of code, where JS except one statement.
+}
+
+Block Scope:-
+{
+    //What all variables and functions we can access inside this block is known as "Block Scope".
+}
+
+{
+    var a = 10; //var is hoisted in global scope.
+    let b = 100; //let is hoisted in block scope.
+    const c = 200; //const is hoisted in block scope.
+    //Block scope is a separate memory space where block and const are stored.
+}
+
+Shadowing in JS:-
+[Var]
+var a = 100;
+{
+    var a = 10;
+    console.log(a);//value of a is 10 [a=100 is shadowed by a=10] [Present in global scope]
+}
+console.log(a);//value of a is 10 [a=100 is shadowed by a=10] in global scope also, since all are pointing to same memory location.[Present in global scope]
+
+[let]
+let a = 100;
+{
+    let a = 10;
+    console.log(a);//value of a is 10 [a=100 is shadowed by a=10] a is in block scope.
+}
+console.log(a);//value of a is 100. Here a is in another scope.[Not in global scope]
+
+Whenever we declare and initialize a let and const variable in a (global space not inside {block}) it would be available or placed in a "script scope" and not in "global scope".
+When defined inside block, it would be available inside block scope.
+
+Shadowing behaves similar like block in function also.
+
+Illegal Shadowing:- Shadowing a let or const variable with var.
+let can be shadowed by let. same for const.
+var can be shadowed by let or const.
+
+Scope in normal function and in arrow function is same.
+
+Closures Concept:- 
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). 
+
+1.A function which is bind together with its lexical environment.
+2.Function along with its lexical scope forms closure.
+
+Closure Example:-
+function x() {
+    let a = 8;
+    function y() {
+        console.log(a);
+    }
+    a = 100;
+    return y;
+}
+let z = x();
+z();
+console.log(z);
+
+Uses of closures:-
+1.Module Design pattern
+2.currying
+3.Functions like once
+4.memoize
+5.maintaining state in async world
+6.setTimeouts
+7.Iterators
+8.Data hiding & Encapsulation(Variable which we don't want to modified in other space of the code.)
+9.and many more...
+
+Disadvantages of closures:-
+1.Over consumption of memories.
+2.If not handle properly - Then problem of memory leaks will arise.
+
+Garbage collector - Freeze up the un-utilized variables/memory.
