@@ -23,6 +23,12 @@ Other names for Call Stack:
 4.Runtime Stack
 5.Machine Stack
 
+Whenever any JS code is executed - a global object is created(window) and Global execution context is created alongwith it this variable is also created. 
+Anything which is not inside function - it is in global scope.
+
+undefined in console - Memory alloted but called before intialization.
+Not defined in console - Memory not alloted [Error]
+
 JS is loosely typed language or weakly typed language.
 It does not attaches its variable to any specific data type.
 Means we put can string in a variable a or array in it.
@@ -147,3 +153,51 @@ Disadvantages of closures:-
 2.If not handle properly - Then problem of memory leaks will arise.
 
 Garbage collector - Freeze up the un-utilized variables/memory.
+
+Function Theory:-
+Anonymous Function:- Function without name.
+Ex.:-
+function (){..}
+//Anonymous Function are used as values.
+//This function should be assigned to variable like Function Expression.
+
+Function Statement:-
+function a(){
+    console.log("Siva");
+}
+//A simple function with name is known as function statement.
+
+Function Expression:-
+var b = function (){
+    console.log("Siva");
+}
+//Function assigned to a variable is Function Expression.
+
+->Difference between Function Statement and Function Expression is "Hoisting". When a() and b() is written before the functions then a will give an output. However, b will throw an error since in hoisting it will be undefined in "Memory creation phase".
+
+Function Declaration:- Function Statement and Function Declaration are same.
+
+Named Function Expression:-
+Function Statement assigned to a variable.
+Ex.:-
+var a = function abc(){...}
+a();//Will get output.
+abc();//Will throw an error.
+
+Difference between Parameter and Arguments:-
+var a = function (param1, param2){...}
+a(arg1, arg2);
+
+
+What are First class function/First Class Citizens?
+A Function passed as an argument to another function is known as First Class Function.
+The ability to use Functions as an value is known as First Class Function.
+Function can be passed as an argument.
+We can return a function from an Anonymous Function.
+
+What is Callback Function?
+A function passed to other function as a parameter.
+
+Use Async for operations which take more time, So that it won't block the main thread/Call Stack.
+
+Event Loop:-

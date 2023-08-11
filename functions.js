@@ -1,10 +1,3 @@
-//Whenever any JS code is executed - a global object is created(window) and Global execution context is created alongwith it this variable is also created. 
-//Anything which is not inside function - it is in global scope.
-
-//undefined in console - Memory alloted but called before intialization.
-//Not defined in console - Memory not alloted [Error]
-
-
 // function x() {
 //     let a = 8;
 //     function y() {
@@ -17,11 +10,21 @@
 // z();
 // console.log(z);
 
-for (var i = 1; i <= 5; i++) {
-    function disp(i) {
-        setTimeout(() => {
-            console.log(i);
-        }, i * 1000);
-    }
-    disp(i);
+// for (var i = 1; i <= 5; i++) {
+//     function disp(i) {
+//         setTimeout(() => {
+//             console.log(i);
+//         }, i * 1000);
+//     }
+//     disp(i);
+// }
+
+//Closure Demo with Callback Function:-
+function attachEventListeners() {
+  let count = 0;
+  document.getElementById("clickMe").addEventListener("click", () => {
+    console.log("Button Clicked", ++count);
+  });
 }
+
+attachEventListeners();
